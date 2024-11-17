@@ -1,0 +1,35 @@
+{
+  "canisters": {
+    "iNotebook_backend": {
+      "main": "src/iNotebook_backend/main.mo",
+      "type": "motoko"
+    },
+    "iNotebook_frontend": {
+      "dependencies": [
+        "iNotebook_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/iNotebook_frontend/src/index.html"
+      },
+      "source": [
+        "src/iNotebook_frontend/assets",
+        "dist/iNotebook_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.11.1",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
